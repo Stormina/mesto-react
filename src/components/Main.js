@@ -1,30 +1,29 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import Card from './Card.js';
 import api from '../utils/Api.js';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 
-  const [{userName, userDescription, userAvatar}, setState] = React.useState([]);
-  const [cards, setCards] = React.useState([]);
+  const [{userName, userDescription, userAvatar}, setUserinfo] = useState([{}]);
+  const [cards, setCards] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     api.getInitialCards()
     .then((res) => {
       setCards(res);
     })
-    .catch((err) => console.log(err))
-  }, []);
-
-  React.useEffect(() => {
+    .catch((err) => console.log(err));
+  
     api.getUserInfo()
     .then((res) => {
-      setState({
+      setUserinfo({
         userName: res.name,
         userDescription: res.about,
         userAvatar: res.avatar
       })
-    }, []);
-  })
+    })
+    .catch((err) => console.log(err));
+  }, []);
 
   return (
     <main className="content">
