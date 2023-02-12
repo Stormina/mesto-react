@@ -27,6 +27,6 @@
 * Оптимизировать адаптив.
 * Добавить возможность листать карточки, не выходя из режима просмотра.
 
-Ссылка на проект [Mesto](https://stormina.github.io/mesto/)
+Ссылка на проект [Mesto](https://stormina.github.io/mesto-react/)
 
 ***
