@@ -1,0 +1,8 @@
+.popup__card {
+  max-width: 75vw;
+  max-height: 75vh;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+}

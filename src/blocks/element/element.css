@@ -1,0 +1,13 @@
+.element {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.element:hover {
+  outline: 1px solid aquamarine;
+  transition: outline .3s linear;
+}
