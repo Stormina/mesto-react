@@ -4,7 +4,7 @@ import api from '../utils/Api.js';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 
-  const [{userName, userDescription, userAvatar}, setUserinfo] = useState([{}]);
+  const [{userName, userDescription, userAvatar}, setUserinfo] = useState({});
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
