@@ -22,7 +22,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers
   })
-    .then(res => this._promiseReject(res));
+    .then((res) => this._promiseReject(res));
   }
 
   patchUserProfile(data) {
@@ -34,7 +34,7 @@ class Api {
         about: data.about
       })
     })
-    .then(res => this._promiseReject(res));
+    .then((res) => this._promiseReject(res));
   }
 
   postNewCard(data) {
@@ -46,7 +46,7 @@ class Api {
         link: data.link
       })
     })
-      .then(res => this._promiseReject(res));
+      .then((res) => this._promiseReject(res));
   }
 
   deleteUserCard(id) {
@@ -54,7 +54,7 @@ class Api {
       method: 'DELETE',
       headers: this._headers
     })
-      .then(res => this._promiseReject(res));
+      .then((res) => this._promiseReject(res));
   }
 
   putLikesCard(id) {
@@ -62,7 +62,7 @@ class Api {
       method: 'PUT',
       headers: this._headers
     })
-      .then(res => this._promiseReject(res));
+      .then((res) => this._promiseReject(res));
   }
 
   deleteLikesCard(id) {
@@ -70,7 +70,7 @@ class Api {
       method: 'DELETE',
       headers: this._headers
     })
-      .then(res => this._promiseReject(res));
+      .then((res) => this._promiseReject(res));
   }
 
   patchUserAvatar(data) {
@@ -81,7 +81,15 @@ class Api {
         avatar: data.avatar
       })
     })
-      .then(res => this._promiseReject(res));
+      .then((res) => this._promiseReject(res));
+  }
+
+  changeLikeCardStatus(id, isLiked) {
+    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      method: isLiked ? "PUT" : "DELETE",
+      headers: this._headers,
+      })
+      .then((res) => this._promiseReject(res));
   }
 }
 
