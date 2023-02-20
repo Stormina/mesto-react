@@ -100,7 +100,7 @@ function App() {
     api.deleteUserCard(selectedDeleteCard._id)
     .then(() => {
       setCards(
-        cards.filter((item) => item !== selectedDeleteCard)
+        cards.filter((item) => item._id !== selectedDeleteCard._id)
       );
       closeAllPopups();
     })

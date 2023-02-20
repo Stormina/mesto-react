@@ -41,6 +41,7 @@ function AddPlacePopup({isOpen, onClose, onAddPlace}) {
           name="name"
           type="text"
           placeholder="Название"
+          value={cardName ? cardName : ''}
           onChange={handleCardName}/>
         <span className="form__input-error"/>
         <input required
@@ -48,6 +49,7 @@ function AddPlacePopup({isOpen, onClose, onAddPlace}) {
           name="link"
           type="url"
           placeholder="Ссылка на картинку"
+          value={cardLink ? cardLink : ''}
           onChange={handleCardLink}/>
         <span className="form__input-error"/>
     </PopupWithForm>
